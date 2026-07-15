@@ -1,0 +1,70 @@
+[
+  {
+    "id": "blue-halo-health",
+    "number": "01",
+    "title": "Blue Halo Health",
+    "category": "Healthcare Platform",
+    "industry": "Healthcare",
+    "link": "https://blue-halo-health-next-js.vercel.app/",
+    "image": "/projects/blue-halo-health.webp",
+    "summary": "A production-ready healthcare platform independently delivered for an international client.",
+    "highlights": [
+      "Built dynamic and configurable admin modules",
+      "Implemented user management and secure JWT authentication",
+      "Delivered the complete production application independently"
+    ],
+    "techStack": ["React.js", "Next.js", "Node.js", "MongoDB"],
+    "capabilities": [
+      "Admin Dashboard",
+      "Authentication",
+      "User Management",
+      "Configurable Modules"
+    ]
+  },
+  {
+    "id": "all-sports-khelo",
+    "number": "02",
+    "title": "All Sports Khelo",
+    "category": "Tournament Ecosystem",
+    "industry": "Sports",
+    "link": "https://fpask.vercel.app/",
+    "image": "/projects/all-sports-khelo.webp",
+    "summary": "A large-scale sports tournament platform covering more than 12 sports categories.",
+    "highlights": [
+      "Built an organiser dashboard for complete tournament management",
+      "Supported tournament creation, ticket pricing and participant tracking",
+      "Implemented result publishing across the tournament lifecycle"
+    ],
+    "techStack": ["React.js", "Next.js", "Node.js", "MySQL"],
+    "capabilities": [
+      "Tournament Management",
+      "Organiser Dashboard",
+      "Participant Tracking",
+      "Result Publishing"
+    ]
+  },
+  {
+    "id": "dream-car",
+    "number": "03",
+    "title": "Dream Car",
+    "category": "Prize-Draw Platform",
+    "industry": "Commerce & Gaming",
+    "link": "https://fp-dreamcar.vercel.app/",
+    "image": "/projects/dream-car.webp",
+    "summary": "A multi-category prize-draw platform combining commerce, payments, rewards and secure winner selection.",
+    "highlights": [
+      "Built ticket cart, instant wins, gift cards, wallet and gift-credit systems",
+      "Integrated Stripe payments and multi-currency switching",
+      "Implemented compliance questions and secure winner selection from eligible tickets"
+    ],
+    "techStack": ["Next.js", "Node.js", "PostgreSQL", "NeonDB"],
+    "capabilities": [
+      "Stripe Payments",
+      "Wallet System",
+      "Instant Win",
+      "Gift Cards",
+      "Compliance Engine",
+      "Random Draw Logic"
+    ]
+  }
+]

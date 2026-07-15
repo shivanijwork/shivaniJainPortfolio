@@ -1,0 +1,33 @@
+[
+  {
+     
+    "chapter": "01",
+    "company": "GoScopify",
+    "role": "Frontend Developer",
+    "duration": "Jun 2024 - Jun 2025",
+    "lesson": "Where I learned that great products begin with great user experiences.",
+    "highlights": [
+      "Built responsive user interfaces using React and Next.js.",
+      "Developed reusable UI components with clean, scalable architecture.",
+      "Collaborated with designers and backend developers to deliver polished, production-ready user experiences."
+    ],
+    "techStack": [
+      "React.js",
+      "Next.js",
+      "Tailwind CSS",
+      "JavaScript"
+    ]  },
+  {
+    "chapter": "02",
+    "company": "Future Profilez",
+    "role": "Software Developer",
+    "duration": "Aug 2025 - Present",
+    "lesson": "Where I grew from building features to building complete products.",
+    "highlights": [
+      "Developed production-ready full-stack applications using Next.js, React, Node.js, Express, MongoDB, and Python.",
+      "Built dynamic admin dashboards, scalable APIs, and role-based access control.",
+      "Implemented server-side rendering, protected routes, and API-driven business features across multiple client projects."
+    ],
+    "techStack": ["Next.js", "React", "Node.js", "Express", "MongoDB", "Python"]
+  }
+]
