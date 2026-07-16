@@ -3,68 +3,118 @@
     "id": "blue-halo-health",
     "number": "01",
     "title": "Blue Halo Health",
-    "category": "Healthcare Platform",
+    "category": "production",
+    "projectType": "Healthcare Platform",
     "industry": "Healthcare",
     "link": "https://blue-halo-health-next-js.vercel.app/",
+    "linkType": "live",
     "image": "/projects/blue-halo-health.webp",
     "summary": "A production-ready healthcare platform independently delivered for an international client.",
-    "highlights": [
-      "Built dynamic and configurable admin modules",
-      "Implemented user management and secure JWT authentication",
-      "Delivered the complete production application independently"
-    ],
+    "highlights": ["Built dynamic and configurable admin modules", "Implemented user management and secure JWT authentication", "Delivered the complete production application independently"],
     "techStack": ["React.js", "Next.js", "Node.js", "MongoDB"],
-    "capabilities": [
-      "Admin Dashboard",
-      "Authentication",
-      "User Management",
-      "Configurable Modules"
-    ]
+    "capabilities": ["Admin Dashboard", "Authentication", "User Management", "Configurable Modules"]
   },
   {
     "id": "all-sports-khelo",
     "number": "02",
     "title": "All Sports Khelo",
-    "category": "Tournament Ecosystem",
+    "category": "production",
+    "projectType": "Tournament Ecosystem",
     "industry": "Sports",
     "link": "https://fpask.vercel.app/",
+    "linkType": "live",
     "image": "/projects/all-sports-khelo.webp",
     "summary": "A large-scale sports tournament platform covering more than 12 sports categories.",
-    "highlights": [
-      "Built an organiser dashboard for complete tournament management",
-      "Supported tournament creation, ticket pricing and participant tracking",
-      "Implemented result publishing across the tournament lifecycle"
-    ],
+    "highlights": ["Built an organiser dashboard for complete tournament management", "Supported tournament creation, ticket pricing and participant tracking", "Implemented result publishing across the tournament lifecycle"],
     "techStack": ["React.js", "Next.js", "Node.js", "MySQL"],
-    "capabilities": [
-      "Tournament Management",
-      "Organiser Dashboard",
-      "Participant Tracking",
-      "Result Publishing"
-    ]
+    "capabilities": ["Tournament Management", "Organiser Dashboard", "Participant Tracking", "Result Publishing"]
   },
   {
     "id": "dream-car",
     "number": "03",
     "title": "Dream Car",
-    "category": "Prize-Draw Platform",
+    "category": "production",
+    "projectType": "Prize-Draw Platform",
     "industry": "Commerce & Gaming",
     "link": "https://fp-dreamcar.vercel.app/",
+    "linkType": "live",
     "image": "/projects/dream-car.webp",
     "summary": "A multi-category prize-draw platform combining commerce, payments, rewards and secure winner selection.",
-    "highlights": [
-      "Built ticket cart, instant wins, gift cards, wallet and gift-credit systems",
-      "Integrated Stripe payments and multi-currency switching",
-      "Implemented compliance questions and secure winner selection from eligible tickets"
-    ],
+    "highlights": ["Built ticket cart, instant wins, gift cards, wallet and gift-credit systems", "Integrated Stripe payments and multi-currency switching", "Implemented compliance questions and secure winner selection from eligible tickets"],
     "techStack": ["Next.js", "Node.js", "PostgreSQL", "NeonDB"],
+    "capabilities": ["Stripe Payments", "Wallet System", "Instant Win", "Gift Cards", "Compliance Engine", "Random Draw Logic"]
+  },
+  {
+    "id": "npo",
+    "number": "04",
+    "title": "NPO",
+    "category": "production",
+    "projectType": "Operations Management SaaS",
+    "industry": "Social Care & Mobility",
+    "link": "https://npo-frontend.vercel.app/",
+    "linkType": "live",
+    "image": "/projects/npo.png",
+    "summary": "A bilingual SaaS operations platform built for a Japanese client managing welfare, mobility support, respite activities, and day services.",
+    "highlights": [
+      "Unified reservations, schedules, staff, vehicles, and service delivery workflows",
+      "Supported multiple organizations through a bilingual English and Japanese experience",
+      "Centralized incident tracking, operational reporting, and auditable activity history"
+    ],
+    "techStack": ["React.js", "Vite", "REST APIs", "i18n"],
     "capabilities": [
-      "Stripe Payments",
-      "Wallet System",
-      "Instant Win",
-      "Gift Cards",
-      "Compliance Engine",
-      "Random Draw Logic"
+      "Multi-organization SaaS",
+      "Scheduling",
+      "Staff Management",
+      "Vehicle Coordination",
+      "Incident Tracking",
+      "Operational Reports"
     ]
+  },
+  {
+    "id": "marketing-asset-generator",
+    "number": "01",
+    "title": "Marketing Asset Generator",
+    "category": "ai",
+    "projectType": "AI Automation Workflow",
+    "industry": "Marketing Automation",
+    "link": "https://github.com/shivanijwork/Marketing-Asset-Generator",
+    "linkType": "github",
+    "image": "/projects/marketing-asset-generator.png",
+    "summary": "An automation workflow built with n8n and OpenAI that generates marketing creatives from a single product image for multiple platforms.",
+    "highlights": [],
+    "techStack": ["n8n", "OpenAI API"],
+    "capabilities": ["n8n Automation", "OpenAI", "Prompt Engineering", "Multi-format Asset Generation"]
+  },
+  {
+    "id": "chennai-flood-mapping",
+    "number": "01",
+    "title": "Chennai Flood Mapping ML",
+    "category": "research",
+    "projectType": "Flood Risk Prediction",
+    "industry": "Machine Learning & GIS",
+    "badge": "Research Highlight",
+    "link": "https://github.com/shivanijwork/ChennaiFloodMappingML",
+    "linkType": "github",
+    "image": "/projects/chennai-flood-mapping.png",
+    "summary": "A postgraduate research project that predicts flood-prone zones across Chennai using machine learning and spatial datasets.",
+    "highlights": [],
+    "techStack": ["Python", "TensorFlow", "Folium"],
+    "capabilities": ["Machine Learning", "Deep Learning", "GIS Mapping", "Folium", "TensorFlow"]
+  },
+  {
+    "id": "skincare-recommendation",
+    "number": "02",
+    "title": "Skincare Recommendation System",
+    "category": "research",
+    "projectType": "Content-based Recommendation",
+    "industry": "Machine Learning",
+    "link": "https://github.com/shivanijwork/Skincare-Recommendation-System",
+    "linkType": "github",
+    "image": "/projects/skincare-recommendation.png",
+    "summary": "A content-based recommendation system that suggests skincare products using ingredient similarity and machine learning classification.",
+    "highlights": [],
+    "techStack": ["Python", "NLP"],
+    "capabilities": ["Recommendation System", "NLP", "Cosine Similarity", "Classification"]
   }
+ 
 ]

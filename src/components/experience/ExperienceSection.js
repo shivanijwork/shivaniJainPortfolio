@@ -11,7 +11,7 @@ export default function ExperienceSection() {
   return (
     <section
       id="experience"
-      className="relative overflow-hidden bg-black px-5 py-24 text-white sm:px-6 lg:px-10 lg:py-28"
+      className="relative overflow-hidden bg-black px-5 py-12 text-white sm:px-6 sm:py-16 lg:px-8 lg:py-4"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-[-8%] top-24 h-72 w-72 rounded-full bg-[#ff4f91]/14 blur-3xl" />
@@ -21,12 +21,12 @@ export default function ExperienceSection() {
       </div>
 
       <div className="relative z-10 mx-auto max-w-5xl">
-        <div className="mx-auto mb-12 max-w-3xl text-center">
-          <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
+        <div className="mx-auto mb-9 max-w-3xl text-center lg:mb-10">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
             {t("experience.eyebrow")}
           </p>
           <h2
-            className="mb-5 text-5xl leading-[0.95] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
+            className="mb-4 text-4xl leading-[0.98] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
             {t("experience.title")}
@@ -36,7 +36,7 @@ export default function ExperienceSection() {
           </p>
         </div>
 
-        <div className="space-y-5 sm:space-y-6">
+        <div className="space-y-4 sm:space-y-5">
           {localizedExperience.map((item, index) => (
             <ExperienceChapter key={item.company} item={item} index={index} />
           ))}

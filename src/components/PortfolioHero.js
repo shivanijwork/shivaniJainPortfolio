@@ -126,6 +126,13 @@ export default function PortfolioHero() {
     document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const openWorkCategory = (category) => {
+    window.dispatchEvent(new CustomEvent("work-category-change", { detail: category }));
+    scrollToWork();
+  };
+
+  const expertiseCategories = ["production", "research", "research"];
+
   return (
     <section
       id="hero"
@@ -155,14 +162,14 @@ export default function PortfolioHero() {
 
       <Navbar />
 
-      <div className="relative z-10 flex flex-1 -translate-y-[8%] flex-col items-center mt-10 justify-center px-5 py-12 text-center md:-translate-y-[15%] md:px-6">
-        <div className="liquid-glass mb-6 flex items-center gap-2 rounded-full px-4 py-2 text-xs text-white/80 md:text-sm">
+      <div className="relative z-10 mt-4 flex flex-1 flex-col items-center justify-center px-5 py-8 text-center sm:mt-6 md:-translate-y-[6%] md:px-6 md:py-10">
+        <div className="liquid-glass mb-4 flex items-center gap-2 rounded-full px-4 py-2 text-xs text-white/80 md:mb-5 md:text-sm">
           <span className="status-dot size-2 rounded-full bg-[#ff4f91]" />
           <span>{t("hero.status")}</span>
         </div>
 
         <h1
-          className="mx-auto mb-7 max-w-5xl text-5xl leading-[0.95] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
+          className="mx-auto mb-5 max-w-5xl text-4xl leading-[0.98] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
           {t("hero.greeting")}
@@ -173,7 +180,7 @@ export default function PortfolioHero() {
           <span className="italic text-[#ffd3e4]">{t("hero.emphasis")}</span>
         </h1>
 
-        <p className="mb-8 max-w-2xl px-2 text-sm leading-relaxed text-white/65 md:px-4 md:text-base">
+        <p className="mb-6 max-w-2xl px-2 text-sm leading-relaxed text-white/65 md:px-4 md:text-base">
           {t("hero.description")}
         </p>
 
@@ -198,26 +205,28 @@ export default function PortfolioHero() {
           </button>
         </div>
 
-        <div className="mt-5 flex flex-wrap justify-center gap-2">
-          {t("hero.expertise").map((item) => (
-            <span
+        <div className="mt-4 flex flex-wrap justify-center gap-2">
+          {t("hero.expertise").map((item, index) => (
+            <button
               key={item}
-              className="liquid-glass rounded-full px-4 py-2 text-xs text-white/65 transition-colors hover:bg-white/5 hover:text-[#ffd3e4]"
+              type="button"
+              onClick={() => openWorkCategory(expertiseCategories[index])}
+              className="liquid-glass rounded-full px-3 py-1.5 text-xs text-white/65 transition-colors hover:bg-white/5 hover:text-[#ffd3e4] sm:px-4 sm:py-2"
             >
               {item}
-            </span>
+            </button>
           ))}
         </div>
 
         <LiquidButton
           href="#about"
-          className="mt-[18px] px-7 py-3 text-sm text-white md:px-8"
+          className="mt-4 px-6 py-2.5 text-sm text-white md:px-7"
         >
           {t("hero.approach")}
         </LiquidButton>
       </div>
 
-      <footer className="relative z-10 flex flex-col items-center justify-between gap-5 px-6 pb-8 md:flex-row md:px-10 md:pb-10">
+      <footer className="relative z-10 flex flex-col items-center justify-between gap-3 px-6 pb-5 md:flex-row md:px-8 md:pb-6">
         <p className="hidden text-xs text-white/45 sm:block md:text-sm">
           {/* Based in Jaipur, India ·  */}
           {t("hero.footer")}

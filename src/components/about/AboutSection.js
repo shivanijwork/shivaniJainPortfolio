@@ -37,7 +37,7 @@ export default function AboutSection() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden bg-black px-5 py-24 text-white sm:px-6 lg:px-10 lg:py-28"
+      className="relative overflow-hidden bg-black px-5 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-[-12%] top-16 h-72 w-72 rounded-full bg-[#ff4f91]/12 blur-3xl" />
@@ -46,12 +46,12 @@ export default function AboutSection() {
       </div>
 
       <div ref={sectionRef} className="about-reveal relative z-10 mx-auto max-w-6xl">
-        <div className="grid gap-10 lg:grid-cols-[1fr_0.72fr] lg:items-center">
+        <div className="grid gap-8 lg:grid-cols-[1fr_0.72fr] lg:items-center lg:gap-10">
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
               {t("about.eyebrow")}
             </p>
-            <h2 className="mb-6 max-w-4xl text-5xl leading-[0.95] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
+            <h2 className="mb-5 max-w-4xl text-4xl leading-[0.98] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
               {t("about.title")}{" "}
               <span
                 className="italic text-[#ffd3e4]"
@@ -61,12 +61,12 @@ export default function AboutSection() {
               </span>
             </h2>
 
-            <div className="max-w-2xl space-y-4 text-sm leading-relaxed text-white/64 md:text-base">
+            <div className="max-w-2xl space-y-3 text-sm leading-relaxed text-white/64 md:text-base">
               {t("about.paragraphs").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
           </div>
 
-          <div className="liquid-glass rounded-[32px] p-5 sm:p-6">
+          <div className="liquid-glass mx-auto w-full max-w-md rounded-2xl p-4 sm:p-5 lg:max-w-none">
             <div className="relative aspect-square overflow-hidden rounded-[26px] bg-[radial-gradient(circle_at_50%_45%,rgba(255,79,145,0.18),transparent_34%),radial-gradient(circle_at_72%_72%,rgba(79,184,255,0.14),transparent_32%)]">
               <div className="absolute inset-8 rounded-full border border-white/10" />
               <div className="absolute inset-16 rounded-full border border-[#ff9fc6]/12" />
@@ -94,25 +94,34 @@ export default function AboutSection() {
           </div>
         </div>
 
-        <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:gap-5">
-          {t("about.cards").map(({ title, description }, index) => {
-            const Icon = philosophyCards[index];
-            return (
-            <article
-              key={title}
-              className="about-card liquid-glass rounded-[26px] p-5 transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.025] hover:shadow-[0_0_32px_rgba(255,79,145,0.1)] sm:p-6"
-              style={{ transitionDelay: `${index * 90}ms` }}
-            >
-              <div className="mb-5 grid size-11 place-items-center rounded-full bg-white/[0.045] text-[#ff9fc6]">
-                <Icon size={20} aria-hidden="true" />
-              </div>
-              <h3 className="mb-2 text-lg font-semibold text-white">{title}</h3>
-              <p className="text-sm leading-relaxed text-white/58">
-                {description}
-              </p>
-            </article>
-            );
-          })}
+        <div className="liquid-glass mt-8 overflow-hidden rounded-2xl px-4 sm:px-5 lg:mt-10">
+          <div className="grid sm:grid-cols-2">
+            {t("about.cards").map(({ title, description }, index) => {
+              const Icon = philosophyCards[index];
+              const isRightColumn = index % 2 === 1;
+              const isSecondRow = index > 1;
+
+              return (
+                <article
+                  key={title}
+                  className={`about-card group flex gap-4 py-4 sm:px-5 sm:py-5 ${
+                    isRightColumn ? "sm:border-l sm:border-white/10" : ""
+                  } ${isSecondRow ? "border-t border-white/10" : index === 1 ? "border-t border-white/10 sm:border-t-0" : ""}`}
+                  style={{ transitionDelay: `${index * 90}ms` }}
+                >
+                  <div className="grid size-9 shrink-0 place-items-center rounded-lg bg-white/[0.05] text-[#ff9fc6] transition-colors duration-300 group-hover:bg-[#ff4f91]/10">
+                    <Icon size={18} aria-hidden="true" />
+                  </div>
+                  <div className="min-w-0">
+                    <h3 className="mb-1 text-base font-semibold text-white">{title}</h3>
+                    <p className="text-sm leading-6 text-white/58">
+                      {description}
+                    </p>
+                  </div>
+                </article>
+              );
+            })}
+          </div>
         </div>
       </div>
     </section>

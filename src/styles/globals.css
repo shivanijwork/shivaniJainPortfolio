@@ -201,6 +201,35 @@ section {
   transform: translateY(0);
 }
 
+.work-panel-shell {
+  transition: height 440ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.work-tab-panel {
+  animation: work-tab-enter 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.work-tab-panel.is-exiting {
+  opacity: 0;
+  transform: translateY(-6px);
+}
+
+.skills-marquee {
+  mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 5%, #000 95%, transparent);
+}
+
+.skills-track {
+  animation: skills-scroll 48s linear infinite;
+  will-change: transform;
+}
+
+.skills-marquee:hover .skills-track,
+.skills-marquee:focus-within .skills-track {
+  animation-play-state: paused;
+}
+
 .about-reveal {
   opacity: 0;
   transform: translateY(26px);
@@ -415,6 +444,23 @@ section {
   }
 }
 
+@keyframes work-tab-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes skills-scroll {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @keyframes opening-card-arrive {
   from { opacity: 0; transform: translateY(18px) scale(0.98); }
   to { opacity: 1; transform: translateY(0) scale(1); }
@@ -554,5 +600,19 @@ section {
 
   .hero-language-button:hover {
     transform: none;
+  }
+
+  .skills-marquee {
+    overflow-x: auto !important;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+
+  .skills-track {
+    transform: none;
+  }
+
+  .skills-track > [aria-hidden="true"] {
+    display: none;
   }
 }

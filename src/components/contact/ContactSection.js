@@ -54,7 +54,7 @@ export default function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden bg-black px-5 py-24 text-white sm:px-6 lg:px-10 lg:py-28"
+      className="relative overflow-hidden bg-black px-5 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-1/2 top-10 h-80 w-[42rem] -translate-x-1/2 rounded-full bg-[#ff4f91]/10 blur-3xl" />
@@ -63,23 +63,23 @@ export default function ContactSection() {
       </div>
 
       <div ref={sectionRef} className="contact-reveal relative z-10 mx-auto max-w-4xl text-center">
-        <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
+        <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
           {t("contact.eyebrow")}
         </p>
 
         <h2
-          className="mx-auto mb-6 max-w-3xl text-5xl leading-[0.95] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
+          className="mx-auto mb-4 max-w-3xl text-4xl leading-[0.98] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
           {t("contact.title")}{" "}
           <span className="italic text-[#ffd3e4]">{t("contact.emphasis")}</span>
         </h2>
 
-        <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-white/62 md:text-base">
+        <p className="mx-auto mb-7 max-w-2xl text-sm leading-relaxed text-white/62 md:text-base lg:mb-8">
           {t("contact.description")}
         </p>
 
-        <div className="liquid-glass mx-auto max-w-3xl rounded-[32px] p-4 sm:p-5">
+        <div className="liquid-glass mx-auto max-w-3xl rounded-2xl p-3 sm:p-4">
           <div className="grid gap-3 md:grid-cols-3">
             {contactLinks.map(({ label, labelKey, value, href, icon: Icon }) => {
               const isEmail = href.startsWith("mailto:");
@@ -91,11 +91,11 @@ export default function ContactSection() {
                   href={href}
                   target={isEmail ? undefined : "_blank"}
                   rel={isEmail ? undefined : "noreferrer"}
-                  className="group liquid-glass flex items-center justify-between gap-4 rounded-full px-4 py-3 text-left transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.035] hover:shadow-[0_0_28px_rgba(255,79,145,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff9fc6]"
+                  className="group liquid-glass flex items-center justify-between gap-3 rounded-xl px-3 py-2.5 text-left transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.035] hover:shadow-[0_0_28px_rgba(255,79,145,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff9fc6] sm:px-4"
                   aria-label={`${displayLabel}: ${value}`}
                 >
                   <span className="flex min-w-0 items-center gap-3">
-                    <span className="grid size-10 shrink-0 place-items-center rounded-full bg-white/[0.055] text-[#ff9fc6]">
+                    <span className="grid size-9 shrink-0 place-items-center rounded-lg bg-white/[0.055] text-[#ff9fc6]">
                       <Icon size={18} aria-hidden="true" />
                     </span>
                     <span className="min-w-0">
@@ -118,7 +118,7 @@ export default function ContactSection() {
           </div>
         </div>
 
-        <p className="mt-8 text-sm text-white/42">
+        <p className="mt-6 text-sm text-white/42">
           {t("contact.thanks")}
         </p>
       </div>

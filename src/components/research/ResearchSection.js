@@ -43,7 +43,7 @@ export default function ResearchSection() {
   return (
     <section
       id="research"
-      className="relative overflow-hidden bg-black px-5 py-24 text-white sm:px-6 lg:px-10 lg:py-28"
+      className="relative overflow-hidden bg-black px-5 py-16 text-white sm:px-6 sm:py-20 lg:px-8 lg:py-24"
     >
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute left-[-10%] top-10 h-80 w-80 rounded-full bg-[#4fb8ff]/10 blur-3xl" />
@@ -52,13 +52,13 @@ export default function ResearchSection() {
       </div>
 
       <div ref={sectionRef} className="research-reveal relative z-10 mx-auto max-w-6xl">
-        <div className="mb-12 grid gap-6 lg:grid-cols-[0.8fr_1fr] lg:items-end">
+        <div className="mb-9 grid gap-5 lg:mb-10 lg:grid-cols-[0.8fr_1fr] lg:items-end lg:gap-6">
           <div>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
               {t("research.eyebrow")}
             </p>
             <h2
-              className="max-w-3xl text-5xl leading-[0.95] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
+              className="max-w-3xl text-4xl leading-[0.98] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
               style={{ fontFamily: "'Instrument Serif', serif" }}
             >
               {t("research.heading")}
@@ -70,20 +70,20 @@ export default function ResearchSection() {
           </p>
         </div>
 
-        <div className="liquid-glass overflow-hidden rounded-[32px]">
+        <div className="liquid-glass overflow-hidden rounded-2xl">
           <div className="grid gap-0 lg:grid-cols-[0.95fr_1.05fr]">
-            <div className="relative min-h-[360px] border-b border-white/8 p-6 sm:p-8 lg:border-b-0 lg:border-r lg:p-10">
+            <div className="relative border-b border-white/8 p-5 sm:p-6 lg:border-b-0 lg:border-r lg:p-7">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_26%_18%,rgba(255,79,145,0.18),transparent_32%),radial-gradient(circle_at_80%_70%,rgba(79,184,255,0.12),transparent_32%)]" />
 
-              <div className="relative z-10 flex h-full flex-col justify-between gap-10">
+              <div className="relative z-10 flex h-full flex-col justify-between gap-7">
                 <div>
-                  <div className="pink-glow mb-8 inline-flex items-center gap-2 rounded-full bg-white/[0.035] px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#ffd3e4]">
+                  <div className="pink-glow mb-5 inline-flex items-center gap-2 rounded-full bg-white/[0.035] px-3 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-[#ffd3e4]">
                     <Award size={15} aria-hidden="true" />
                     {t("research.award")}
                   </div>
 
                   <h3
-                    className="mb-5 text-4xl leading-none text-white sm:text-5xl"
+                    className="mb-4 text-3xl leading-none text-white sm:text-4xl"
                     style={{ fontFamily: "'Instrument Serif', serif" }}
                   >
                     {t("research.title")}
@@ -120,19 +120,19 @@ export default function ResearchSection() {
                   </div>
                 </div>
 
-                <div className="grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                    <Sparkles className="mb-3 text-[#ff9fc6]" size={18} aria-hidden="true" />
+                <div className="grid gap-2.5 sm:grid-cols-3">
+                  <div className="rounded-xl border border-white/10 bg-black/20 p-3.5">
+                    <Sparkles className="mb-2 text-[#ff9fc6]" size={18} aria-hidden="true" />
                     <p className="text-xs text-white/44">{t("research.recognition")}</p>
                     <p className="mt-1 text-sm font-semibold text-white/82">{t("research.bestPaper")}</p>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                    <BookOpenText className="mb-3 text-[#ff9fc6]" size={18} aria-hidden="true" />
+                  <div className="rounded-xl border border-white/10 bg-black/20 p-3.5">
+                    <BookOpenText className="mb-2 text-[#ff9fc6]" size={18} aria-hidden="true" />
                     <p className="text-xs text-white/44">{t("research.publicationLabel")}</p>
                     <p className="mt-1 text-sm font-semibold text-white/82">IEEE Xplore</p>
                   </div>
-                  <div className="rounded-2xl border border-white/10 bg-black/20 p-4">
-                    <FileText className="mb-3 text-[#ff9fc6]" size={18} aria-hidden="true" />
+                  <div className="rounded-xl border border-white/10 bg-black/20 p-3.5">
+                    <FileText className="mb-2 text-[#ff9fc6]" size={18} aria-hidden="true" />
                     <p className="text-xs text-white/44">{t("research.documentId")}</p>
                     <p className="mt-1 text-sm font-semibold text-white/82">{research.documentId}</p>
                   </div>
@@ -140,8 +140,8 @@ export default function ResearchSection() {
               </div>
             </div>
 
-            <div className="p-6 sm:p-8 lg:p-10">
-              <div className="mb-7">
+            <div className="p-5 sm:p-6 lg:p-7">
+              <div className="mb-5">
                 <p className="mb-2 text-sm font-semibold text-[#ffd3e4]">
                   {research.conference}
                 </p>
@@ -150,7 +150,7 @@ export default function ResearchSection() {
                 </p>
               </div>
 
-              <div className="mb-7 rounded-3xl border border-white/10 bg-white/[0.025] p-5">
+              <div className="mb-5 rounded-xl border border-white/10 bg-white/[0.025] p-4">
                 <p className="mb-2 text-xs font-semibold uppercase tracking-[0.24em] text-white/38">
                   {t("research.contributionLabel")}
                 </p>
@@ -159,7 +159,7 @@ export default function ResearchSection() {
                 </p>
               </div>
 
-              <ul className="mb-7 space-y-3">
+              <ul className="mb-5 space-y-2.5">
                 {t("research.highlights").map((highlight) => (
                   <li key={highlight} className="flex gap-3 text-sm leading-relaxed text-white/68">
                     <CheckCircle2
@@ -172,7 +172,7 @@ export default function ResearchSection() {
                 ))}
               </ul>
 
-              <div className="mb-8 flex flex-wrap gap-2">
+              <div className="mb-6 flex flex-wrap gap-2">
                 {t("research.themes").map((theme) => (
                   <span
                     key={theme}

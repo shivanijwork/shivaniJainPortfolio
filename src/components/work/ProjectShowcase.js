@@ -103,7 +103,7 @@ export default function ProjectShowcase({ project, reverse = false }) {
   return (
     <article
       ref={rowRef}
-      className={`project-reveal grid items-center gap-8 lg:grid-cols-2 lg:gap-12 ${
+      className={`project-reveal grid items-center gap-6 lg:grid-cols-2 lg:gap-9 ${
         reverse ? "lg:[&_.project-media]:order-2" : ""
       }`}
     >
@@ -111,29 +111,29 @@ export default function ProjectShowcase({ project, reverse = false }) {
         <ProjectImage project={project} />
       </div>
 
-      <div className="liquid-glass rounded-[28px] px-5 py-6 sm:px-7 sm:py-8 lg:px-9">
-        <div className="mb-4 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
+      <div className="liquid-glass rounded-2xl px-5 py-5 sm:px-6 sm:py-6 lg:px-7">
+        <div className="mb-3 flex flex-wrap items-center gap-3 text-xs font-semibold uppercase tracking-[0.22em] text-white/45">
           <span className="text-[#ff9fc6]">{project.number}</span>
           <span className="h-px w-8 bg-gradient-to-r from-[#ff4f91] to-transparent" />
           <span>{project.industry}</span>
         </div>
 
         <p className="mb-3 text-sm font-medium text-[#ffd3e4]/80">
-          {project.category}
+          {project.projectType}
         </p>
 
         <h3
-          className="mb-4 text-4xl leading-none text-white sm:text-5xl"
+          className="mb-3 text-3xl leading-none text-white sm:text-4xl"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
           {project.title}
         </h3>
 
-        <p className="mb-6 max-w-xl text-sm leading-relaxed text-white/64 md:text-base">
+        <p className="mb-5 max-w-xl text-sm leading-relaxed text-white/64 md:text-base">
           {project.summary}
         </p>
 
-        <div className="mb-6 flex flex-wrap gap-2">
+        <div className="mb-5 flex flex-wrap gap-2">
           {project.capabilities.map((capability) => (
             <span
               key={capability}
@@ -144,7 +144,7 @@ export default function ProjectShowcase({ project, reverse = false }) {
           ))}
         </div>
 
-        <ul className="mb-6 space-y-3">
+        <ul className="mb-5 space-y-2.5">
           {project.highlights.map((highlight) => (
             <li key={highlight} className="flex gap-3 text-sm leading-relaxed text-white/70">
               <CheckCircle2
@@ -157,7 +157,7 @@ export default function ProjectShowcase({ project, reverse = false }) {
           ))}
         </ul>
 
-        <div className="mb-7 flex flex-wrap gap-x-4 gap-y-2 text-xs font-medium text-white/42">
+        <div className="mb-5 flex flex-wrap gap-x-4 gap-y-2 text-xs font-medium text-white/42">
           {project.techStack.map((tech) => (
             <span key={tech}>{tech}</span>
           ))}

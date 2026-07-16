@@ -1,5 +1,5 @@
 {
-  "meta": { "title": "Shivani Jain | Software / Full Stack Developer", "description": "Portfolio of Shivani Jain, a Software / Full Stack Developer building production-level products across healthcare, sports, finance, AI, ML, research, and prize-draw platforms." },
+  "meta": { "title": "Shivani Jain | Software / Full Stack Developer", "description": "Portfolio of Shivani Jain, a Software / Full Stack Developer building production-level products across healthcare, sports, AI, ML, research, and prize-draw platforms." },
   "nav": { "about": "About", "work": "Work", "experience": "Experience", "contact": "Contact", "resume": "Resume", "talk": "Let's Talk" },
   "language": { "selectorLabel": "Select language", "menuLabel": "Available languages", "currentLabel": "Current language: {{language}}" },
   "hero": {
@@ -11,7 +11,7 @@
   },
   "about": {
     "eyebrow": "About", "title": "I don't just write code. I build", "emphasis": "products with purpose.",
-    "paragraphs": ["I'm a software engineer who enjoys turning ideas into products that people actually use.", "I don't get attached to technologies. I choose the right tools for the problem.", "Whether it's a healthcare platform, a finance dashboard, a research project, or an enterprise application, I'm driven by solving meaningful problems, creating intuitive experiences, and continuously learning through every challenge."],
+    "paragraphs": ["I'm a software engineer who enjoys turning ideas into products that people actually use.", "I don't get attached to technologies. I choose the right tools for the problem.", "Whether it's a healthcare platform, a research project, or an enterprise application, I'm driven by solving meaningful problems, creating intuitive experiences, and continuously learning through every challenge."],
     "build": "Build", "loop": "loop", "steps": ["Problem", "Design", "Build", "Learn"],
     "cards": [
       { "title": "Problem First", "description": "Every project starts with understanding the problem, not choosing the technology." },
@@ -27,7 +27,8 @@
     "projects": [
       { "category": "Healthcare Platform", "industry": "Healthcare", "summary": "A production-ready healthcare platform independently delivered for an international client.", "highlights": ["Built dynamic and configurable admin modules", "Implemented user management and secure JWT authentication", "Delivered the complete production application independently"], "capabilities": ["Admin Dashboard", "Authentication", "User Management", "Configurable Modules"] },
       { "category": "Tournament Ecosystem", "industry": "Sports", "summary": "A large-scale sports tournament platform covering more than 12 sports categories.", "highlights": ["Built an organiser dashboard for complete tournament management", "Supported tournament creation, ticket pricing and participant tracking", "Implemented result publishing across the tournament lifecycle"], "capabilities": ["Tournament Management", "Organiser Dashboard", "Participant Tracking", "Result Publishing"] },
-      { "category": "Prize-Draw Platform", "industry": "Commerce & Gaming", "summary": "A multi-category prize-draw platform combining commerce, payments, rewards and secure winner selection.", "highlights": ["Built ticket cart, instant wins, gift cards, wallet and gift-credit systems", "Integrated Stripe payments and multi-currency switching", "Implemented compliance questions and secure winner selection from eligible tickets"], "capabilities": ["Stripe Payments", "Wallet System", "Instant Win", "Gift Cards", "Compliance Engine", "Random Draw Logic"] }
+      { "category": "Prize-Draw Platform", "industry": "Commerce & Gaming", "summary": "A multi-category prize-draw platform combining commerce, payments, rewards and secure winner selection.", "highlights": ["Built ticket cart, instant wins, gift cards, wallet and gift-credit systems", "Integrated Stripe payments and multi-currency switching", "Implemented compliance questions and secure winner selection from eligible tickets"], "capabilities": ["Stripe Payments", "Wallet System", "Instant Win", "Gift Cards", "Compliance Engine", "Random Draw Logic"] },
+      { "category": "Operations Management SaaS", "industry": "Social Care & Mobility", "summary": "A bilingual SaaS operations platform built for a Japanese client managing welfare, mobility support, respite activities, and day services.", "highlights": ["Unified reservations, schedules, staff, vehicles, and service delivery workflows", "Supported multiple organizations through a bilingual English and Japanese experience", "Centralized incident tracking, operational reporting, and auditable activity history"], "capabilities": ["Multi-organization SaaS", "Scheduling", "Staff Management", "Vehicle Coordination", "Incident Tracking", "Operational Reports"] }
     ]
   },
   "experience": {
