@@ -127,7 +127,7 @@ export default function WorkSection() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
               {t("work.eyebrow")}
             </p>
-            <h2 className="max-w-3xl text-4xl leading-[0.98] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
+            <h2 className="max-w-3xl text-4xl leading-[0.98] tracking-tight text-white md:text-5xl">
               {t("work.title")} <span className="italic text-[#ffd3e4]" style={{ fontFamily: "'Instrument Serif', serif" }}>{t("work.emphasis")}</span>
             </h2>
           </div>

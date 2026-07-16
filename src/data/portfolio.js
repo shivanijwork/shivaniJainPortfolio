@@ -99,7 +99,7 @@ export const contactLinks = [
   {
     label: "Email",
     value: "Let's build something useful",
-    href: "mailto:shivani@example.com?subject=Portfolio%20Inquiry",
+    href: "mailto:shivanijwork@gmail.com?subject=Portfolio%20Inquiry",
   },
   {
     label: "Projects",

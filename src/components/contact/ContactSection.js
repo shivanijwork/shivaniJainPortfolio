@@ -5,20 +5,20 @@ import useLanguage from "@/hooks/useLanguage";
 const contactLinks = [
   {
     labelKey: "contact.email",
-    value: "shivani@example.com",
-    href: "mailto:shivani@example.com",
+    value: "shivanijwork@gmail.com",
+    href: "mailto:shivanijwork@gmail.com",
     icon: Mail,
   },
   {
     label: "GitHub",
-    value: "github.com",
-    href: "https://github.com/",
+    value: "github.com/shivanijwork",
+    href: "https://github.com/shivanijwork",
     icon: Github,
   },
   {
     label: "LinkedIn",
-    value: "linkedin.com",
-    href: "https://www.linkedin.com/",
+    value: "linkedin.com/in/shivani-jain13",
+    href: "https://www.linkedin.com/in/shivani-jain13/",
     icon: Linkedin,
   },
 ];
@@ -68,7 +68,7 @@ export default function ContactSection() {
         </p>
 
         <h2
-          className="mx-auto mb-4 max-w-3xl text-4xl leading-[0.98] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
+          className="mx-auto mb-4 max-w-3xl text-4xl leading-[0.98] tracking-tight text-white md:text-5xl"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
           {t("contact.title")}{" "}

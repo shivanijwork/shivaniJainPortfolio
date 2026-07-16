@@ -60,11 +60,16 @@ export default function PortfolioHero() {
     if (!video) return undefined;
 
     video.style.opacity = "0";
+    const readinessTimeout = window.setTimeout(() => setVideoReady(true), 6000);
 
     const handleCanPlay = () => {
       setVideoReady(true);
       fadingOutRef.current = false;
       fadeTo(1, 500);
+    };
+
+    const handleVideoError = () => {
+      setVideoReady(true);
     };
 
     const handleTimeUpdate = () => {
@@ -96,12 +101,15 @@ export default function PortfolioHero() {
     };
 
     video.addEventListener("canplay", handleCanPlay);
+    video.addEventListener("error", handleVideoError);
     video.addEventListener("timeupdate", handleTimeUpdate);
     video.addEventListener("ended", handleEnded);
 
     return () => {
+      window.clearTimeout(readinessTimeout);
       cancelFade();
       video.removeEventListener("canplay", handleCanPlay);
+      video.removeEventListener("error", handleVideoError);
       video.removeEventListener("timeupdate", handleTimeUpdate);
       video.removeEventListener("ended", handleEnded);
     };
@@ -136,7 +144,7 @@ export default function PortfolioHero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-screen flex-col overflow-hidden bg-black"
+      className="relative flex min-h-[100svh] flex-col overflow-hidden bg-black"
     >
       {!openingHidden && (
         <HeroOnboarding isExiting={readyToReveal} videoReady={videoReady} />
@@ -169,7 +177,7 @@ export default function PortfolioHero() {
         </div>
 
         <h1
-          className="mx-auto mb-5 max-w-5xl text-4xl leading-[0.98] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
+          className="mx-auto mb-5 max-w-5xl text-4xl leading-[0.98] tracking-tight text-white md:text-5xl"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
           {t("hero.greeting")}

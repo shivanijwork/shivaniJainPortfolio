@@ -58,7 +58,7 @@ export default function ResearchSection() {
               {t("research.eyebrow")}
             </p>
             <h2
-              className="max-w-3xl text-4xl leading-[0.98] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
+              className="max-w-3xl text-4xl leading-[0.98] tracking-tight text-white md:text-5xl"
               style={{ fontFamily: "'Instrument Serif', serif" }}
             >
               {t("research.heading")}

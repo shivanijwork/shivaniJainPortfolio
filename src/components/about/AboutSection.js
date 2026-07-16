@@ -51,7 +51,7 @@ export default function AboutSection() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
               {t("about.eyebrow")}
             </p>
-            <h2 className="mb-5 max-w-4xl text-4xl leading-[0.98] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
+            <h2 className="mb-5 max-w-4xl text-4xl leading-[0.98] tracking-tight text-white md:text-5xl">
               {t("about.title")}{" "}
               <span
                 className="italic text-[#ffd3e4]"

@@ -4,17 +4,17 @@ import useLanguage from "@/hooks/useLanguage";
 const links = [
   {
     label: "GitHub",
-    href: "https://github.com/",
+    href: "https://github.com/shivanijwork",
     icon: Github,
   },
   {
     label: "LinkedIn",
-    href: "https://www.linkedin.com/",
+    href: "https://www.linkedin.com/in/shivani-jain13/",
     icon: Linkedin,
   },
   {
     labelKey: "accessibility.emailShivani",
-    href: "mailto:your-email@example.com",
+    href: "mailto:shivanijwork@gmail.com",
     icon: Mail,
   },
 ];
