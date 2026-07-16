@@ -5,7 +5,7 @@
   "hero": {
     "videoFallback": "Your browser does not support the background video.", "status": "Open to meaningful software opportunities",
     "greeting": "Hi, I'm Shivani.", "line2": "Tech stacks come and go.", "line3": "I build solutions that solve", "emphasis": "real-world problems.",
-    "description": "I build production-ready digital products across healthcare, sports, finance, mobile applications, machine learning, and research.",
+    "description": "I build production-ready digital products across healthcare, sports, mobile applications, machine learning, and research.",
     "explore": "Explore the products and problems I've worked on", "scrollLabel": "Scroll to work section", "expertise": ["Full Stack Products", "Machine Learning", "Research"],
     "approach": "View my approach", "footer": "Building for the web and beyond"
   },
