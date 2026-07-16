@@ -109,6 +109,85 @@ section {
   box-shadow: 0 0 18px rgba(255, 79, 145, 0.5);
 }
 
+.hero-stage > * {
+  filter: blur(12px);
+  transform-origin: center;
+  transition: filter 850ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-stage.is-revealed > * {
+  filter: none;
+}
+
+.hero-opening {
+  opacity: 1;
+  transition: opacity 800ms cubic-bezier(0.22, 1, 0.36, 1), visibility 800ms;
+}
+
+.hero-opening-veil {
+  background:
+    radial-gradient(circle at 50% 48%, rgba(255, 79, 145, 0.08), transparent 36%),
+    rgba(3, 2, 4, 0.64);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
+  transition: backdrop-filter 800ms ease, background-color 800ms ease;
+}
+
+.hero-opening-card {
+  background: linear-gradient(145deg, rgba(30, 22, 31, 0.72), rgba(12, 8, 13, 0.58));
+  backdrop-filter: blur(28px) saturate(135%);
+  -webkit-backdrop-filter: blur(28px) saturate(135%);
+  box-shadow: 0 28px 90px rgba(0, 0, 0, 0.5), 0 0 55px rgba(255, 79, 145, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.14);
+  animation: opening-card-arrive 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  transition: opacity 600ms ease, transform 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-opening.is-exiting {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.hero-opening.is-exiting .hero-opening-card {
+  opacity: 0;
+  transform: translateY(-10px) scale(0.97);
+}
+
+.hero-language-button {
+  background: rgba(255, 255, 255, 0.025);
+  transition: transform 250ms ease, color 250ms ease, background-color 250ms ease, box-shadow 250ms ease;
+}
+
+.hero-language-button:hover {
+  color: #fff;
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.065);
+}
+
+.hero-language-button.is-selected {
+  color: #fff;
+  background: rgba(255, 79, 145, 0.1);
+  box-shadow: 0 0 25px rgba(255, 79, 145, 0.14), inset 0 1px 1px rgba(255, 255, 255, 0.16);
+}
+
+.hero-language-button:focus-visible {
+  outline: 2px solid #ff9fc6;
+  outline-offset: 4px;
+}
+
+.opening-glow {
+  background: linear-gradient(90deg, transparent, #ff9fc6, transparent);
+  box-shadow: 0 0 18px rgba(255, 79, 145, 0.75);
+  animation: opening-glow-breathe 1.8s ease-in-out infinite;
+}
+
+.opening-ellipsis {
+  display: inline-block;
+  width: 0.8em;
+  overflow: hidden;
+  vertical-align: bottom;
+  animation: opening-ellipsis 1.5s steps(4, end) infinite;
+}
+
 .project-reveal {
   opacity: 0;
   transform: translateY(28px);
@@ -336,6 +415,20 @@ section {
   }
 }
 
+@keyframes opening-card-arrive {
+  from { opacity: 0; transform: translateY(18px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes opening-glow-breathe {
+  0%, 100% { opacity: 0.35; transform: scaleX(0.75); }
+  50% { opacity: 1; transform: scaleX(1); }
+}
+
+@keyframes opening-ellipsis {
+  to { width: 1.15em; }
+}
+
 @keyframes work-light-sweep {
   from {
     transform: translateX(-58%) skewX(-14deg);
@@ -452,6 +545,14 @@ section {
 
   .contact-reveal {
     opacity: 1;
+    transform: none;
+  }
+
+  .hero-opening-card {
+    animation: none;
+  }
+
+  .hero-language-button:hover {
     transform: none;
   }
 }

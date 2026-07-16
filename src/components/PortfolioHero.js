@@ -1,18 +1,23 @@
-import { useCallback, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { ArrowDown, BriefcaseBusiness } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import LiquidButton from "@/components/LiquidButton";
 import SocialLinks from "@/components/SocialLinks";
 import useLanguage from "@/hooks/useLanguage";
+import HeroOnboarding from "@/components/HeroOnboarding";
 
 const videoSource =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_115001_bcdaa3b4-03de-47e7-ad63-ae3e392c32d4.mp4";
 
 export default function PortfolioHero() {
-  const { t } = useLanguage();
+  const { preferenceStatus, t } = useLanguage();
   const videoRef = useRef(null);
   const animationFrameRef = useRef(null);
   const fadingOutRef = useRef(false);
+  const [videoReady, setVideoReady] = useState(false);
+  const [openingHidden, setOpeningHidden] = useState(false);
+  const languageReady = ["restored", "selected"].includes(preferenceStatus);
+  const readyToReveal = videoReady && languageReady;
 
   const cancelFade = useCallback(() => {
     if (animationFrameRef.current) {
@@ -56,7 +61,8 @@ export default function PortfolioHero() {
 
     video.style.opacity = "0";
 
-    const handleLoadedData = () => {
+    const handleCanPlay = () => {
+      setVideoReady(true);
       fadingOutRef.current = false;
       fadeTo(1, 500);
     };
@@ -89,17 +95,32 @@ export default function PortfolioHero() {
       }, 100);
     };
 
-    video.addEventListener("loadeddata", handleLoadedData);
+    video.addEventListener("canplay", handleCanPlay);
     video.addEventListener("timeupdate", handleTimeUpdate);
     video.addEventListener("ended", handleEnded);
 
     return () => {
       cancelFade();
-      video.removeEventListener("loadeddata", handleLoadedData);
+      video.removeEventListener("canplay", handleCanPlay);
       video.removeEventListener("timeupdate", handleTimeUpdate);
       video.removeEventListener("ended", handleEnded);
     };
   }, [cancelFade, fadeTo]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (video && video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+      setVideoReady(true);
+      fadeTo(1, 500);
+    }
+  }, [fadeTo]);
+
+  useEffect(() => {
+    if (!readyToReveal || openingHidden) return undefined;
+
+    const timeout = window.setTimeout(() => setOpeningHidden(true), 850);
+    return () => window.clearTimeout(timeout);
+  }, [openingHidden, readyToReveal]);
 
   const scrollToWork = () => {
     document.getElementById("work")?.scrollIntoView({ behavior: "smooth" });
@@ -110,6 +131,14 @@ export default function PortfolioHero() {
       id="hero"
       className="relative flex min-h-screen flex-col overflow-hidden bg-black"
     >
+      {!openingHidden && (
+        <HeroOnboarding isExiting={readyToReveal} videoReady={videoReady} />
+      )}
+      <div
+        className={`hero-stage contents ${readyToReveal ? "is-revealed" : ""}`}
+        inert={!readyToReveal ? "" : undefined}
+        aria-hidden={!readyToReveal}
+      >
       <video
         ref={videoRef}
         className="absolute inset-0 h-full w-full translate-y-[17%] object-cover opacity-0"
@@ -117,7 +146,7 @@ export default function PortfolioHero() {
         autoPlay
         muted
         playsInline
-        preload="metadata"
+        preload="auto"
       >
         {t("hero.videoFallback")}
       </video>
@@ -195,6 +224,7 @@ export default function PortfolioHero() {
         </p>
         <SocialLinks />
       </footer>
+      </div>
     </section>
   );
 }

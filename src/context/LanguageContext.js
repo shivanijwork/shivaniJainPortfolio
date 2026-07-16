@@ -15,13 +15,22 @@ function getNestedValue(source, key) {
 
 export function LanguageProvider({ children }) {
   const [language, setLanguageState] = useState(DEFAULT_LANGUAGE);
+  const [preferenceStatus, setPreferenceStatus] = useState("unresolved");
 
   useEffect(() => {
     const frame = window.requestAnimationFrame(() => {
-      const savedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
-      if (savedLanguage && isSupportedLanguage(savedLanguage)) {
-        setLanguageState(savedLanguage);
+      try {
+        const savedLanguage = window.localStorage.getItem(LANGUAGE_STORAGE_KEY);
+        if (savedLanguage && isSupportedLanguage(savedLanguage)) {
+          setLanguageState(savedLanguage);
+          setPreferenceStatus("restored");
+          return;
+        }
+      } catch {
+        // The language picker still works when storage is unavailable.
       }
+
+      setPreferenceStatus("new");
     });
     return () => window.cancelAnimationFrame(frame);
   }, []);
@@ -33,7 +42,12 @@ export function LanguageProvider({ children }) {
   const setLanguage = useCallback((nextLanguage) => {
     if (!isSupportedLanguage(nextLanguage)) return;
     setLanguageState(nextLanguage);
-    window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
+    setPreferenceStatus("selected");
+    try {
+      window.localStorage.setItem(LANGUAGE_STORAGE_KEY, nextLanguage);
+    } catch {
+      // Keep the in-memory preference when storage is unavailable.
+    }
   }, []);
 
   const t = useCallback(
@@ -51,8 +65,8 @@ export function LanguageProvider({ children }) {
   );
 
   const value = useMemo(
-    () => ({ language, languages, setLanguage, t }),
-    [language, setLanguage, t],
+    () => ({ language, languages, preferenceStatus, setLanguage, t }),
+    [language, preferenceStatus, setLanguage, t],
   );
 
   return <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>;
