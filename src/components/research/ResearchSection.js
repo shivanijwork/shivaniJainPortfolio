@@ -56,7 +56,7 @@ export default function ResearchSection() {
               {research.eyebrow}
             </p>
             <h2
-              className="max-w-3xl text-5xl leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl"
+              className="max-w-3xl text-5xl leading-[0.95] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
               style={{ fontFamily: "'Instrument Serif', serif" }}
             >
               Award-winning thinking, beyond the code.

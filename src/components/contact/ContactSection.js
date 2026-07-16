@@ -66,7 +66,7 @@ export default function ContactSection() {
         </p>
 
         <h2
-          className="mx-auto mb-6 max-w-3xl text-5xl leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl"
+          className="mx-auto mb-6 max-w-3xl text-5xl leading-[0.95] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
           Let&apos;s build something{" "}

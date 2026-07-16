@@ -20,7 +20,7 @@ export default function ExperienceSection() {
             Experience
           </p>
           <h2
-            className="mb-5 text-5xl leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl"
+            className="mb-5 text-5xl leading-[0.95] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
             Places That Shaped Me

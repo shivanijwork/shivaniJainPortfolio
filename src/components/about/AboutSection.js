@@ -74,7 +74,7 @@ export default function AboutSection() {
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
               About
             </p>
-            <h2 className="mb-6 max-w-4xl text-5xl leading-[0.95] tracking-tight text-white sm:text-6xl lg:text-7xl">
+            <h2 className="mb-6 max-w-4xl text-5xl leading-[0.95] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
               I don&apos;t just write code. I build{" "}
               <span
                 className="italic text-[#ffd3e4]"
