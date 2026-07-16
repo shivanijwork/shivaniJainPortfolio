@@ -1,9 +1,10 @@
 import { useEffect, useRef } from "react";
 import { ArrowUpRight, Github, Linkedin, Mail } from "lucide-react";
+import useLanguage from "@/hooks/useLanguage";
 
 const contactLinks = [
   {
-    label: "Email",
+    labelKey: "contact.email",
     value: "shivani@example.com",
     href: "mailto:shivani@example.com",
     icon: Mail,
@@ -23,6 +24,7 @@ const contactLinks = [
 ];
 
 export default function ContactSection() {
+  const { t } = useLanguage();
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -62,36 +64,35 @@ export default function ContactSection() {
 
       <div ref={sectionRef} className="contact-reveal relative z-10 mx-auto max-w-4xl text-center">
         <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
-          Get In Touch
+          {t("contact.eyebrow")}
         </p>
 
         <h2
           className="mx-auto mb-6 max-w-3xl text-5xl leading-[0.95] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
-          Let&apos;s build something{" "}
-          <span className="italic text-[#ffd3e4]">worth remembering.</span>
+          {t("contact.title")}{" "}
+          <span className="italic text-[#ffd3e4]">{t("contact.emphasis")}</span>
         </h2>
 
         <p className="mx-auto mb-10 max-w-2xl text-sm leading-relaxed text-white/62 md:text-base">
-          If you&apos;re building something meaningful and think I can help,
-          I&apos;d love to hear about it. If it feels like the right fit for both
-          of us, I&apos;ll be happy to continue the conversation.
+          {t("contact.description")}
         </p>
 
         <div className="liquid-glass mx-auto max-w-3xl rounded-[32px] p-4 sm:p-5">
           <div className="grid gap-3 md:grid-cols-3">
-            {contactLinks.map(({ label, value, href, icon: Icon }) => {
+            {contactLinks.map(({ label, labelKey, value, href, icon: Icon }) => {
               const isEmail = href.startsWith("mailto:");
+              const displayLabel = labelKey ? t(labelKey) : label;
 
               return (
                 <a
-                  key={label}
+                  key={label || labelKey}
                   href={href}
                   target={isEmail ? undefined : "_blank"}
                   rel={isEmail ? undefined : "noreferrer"}
                   className="group liquid-glass flex items-center justify-between gap-4 rounded-full px-4 py-3 text-left transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.035] hover:shadow-[0_0_28px_rgba(255,79,145,0.12)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff9fc6]"
-                  aria-label={`${label}: ${value}`}
+                  aria-label={`${displayLabel}: ${value}`}
                 >
                   <span className="flex min-w-0 items-center gap-3">
                     <span className="grid size-10 shrink-0 place-items-center rounded-full bg-white/[0.055] text-[#ff9fc6]">
@@ -99,7 +100,7 @@ export default function ContactSection() {
                     </span>
                     <span className="min-w-0">
                       <span className="block text-xs font-medium uppercase tracking-[0.18em] text-white/38">
-                        {label}
+                        {displayLabel}
                       </span>
                       <span className="block truncate text-sm font-semibold text-white/78">
                         {value}
@@ -118,7 +119,7 @@ export default function ContactSection() {
         </div>
 
         <p className="mt-8 text-sm text-white/42">
-          Thanks for taking the time to explore my work.
+          {t("contact.thanks")}
         </p>
       </div>
     </section>

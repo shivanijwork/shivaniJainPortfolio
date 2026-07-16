@@ -1,0 +1,52 @@
+{
+  "meta": { "title": "Shivani Jain | Software / Full Stack Developer", "description": "Portfolio of Shivani Jain, a Software / Full Stack Developer building production-level products across healthcare, sports, finance, AI, ML, research, and prize-draw platforms." },
+  "nav": { "about": "About", "work": "Work", "experience": "Experience", "contact": "Contact", "resume": "Resume", "talk": "Let's Talk" },
+  "language": { "selectorLabel": "Select language", "menuLabel": "Available languages", "currentLabel": "Current language: {{language}}" },
+  "hero": {
+    "videoFallback": "Your browser does not support the background video.", "status": "Open to meaningful software opportunities",
+    "greeting": "Hi, I'm Shivani.", "line2": "Tech stacks come and go.", "line3": "I build solutions that solve", "emphasis": "real-world problems.",
+    "description": "I build production-ready digital products across healthcare, sports, finance, mobile applications, machine learning, and research.",
+    "explore": "Explore the products and problems I've worked on", "scrollLabel": "Scroll to work section", "expertise": ["Full Stack Products", "Machine Learning", "Research"],
+    "approach": "View my approach", "footer": "Building for the web and beyond"
+  },
+  "about": {
+    "eyebrow": "About", "title": "I don't just write code. I build", "emphasis": "products with purpose.",
+    "paragraphs": ["I'm a software engineer who enjoys turning ideas into products that people actually use.", "I don't get attached to technologies. I choose the right tools for the problem.", "Whether it's a healthcare platform, a finance dashboard, a research project, or an enterprise application, I'm driven by solving meaningful problems, creating intuitive experiences, and continuously learning through every challenge."],
+    "build": "Build", "loop": "loop", "steps": ["Problem", "Design", "Build", "Learn"],
+    "cards": [
+      { "title": "Problem First", "description": "Every project starts with understanding the problem, not choosing the technology." },
+      { "title": "Always Learning", "description": "Every product teaches me something new, and I carry those lessons into the next one." },
+      { "title": "Build End-to-End", "description": "I enjoy taking products from idea to deployment across the entire stack." },
+      { "title": "User Experience Matters", "description": "Great software isn't only functional. It should feel effortless to use." }
+    ]
+  },
+  "work": {
+    "eyebrow": "Selected Work", "title": "Products built around", "emphasis": "real problems.", "count": "Project count",
+    "intro": "From international healthcare platforms to tournament ecosystems and prize-draw products, I build complete digital experiences shaped around business needs.",
+    "previewSoon": "Preview coming soon", "visit": "Visit live product", "openProduct": "Open {{title}} live product", "imageAlt": "{{title}} project preview",
+    "projects": [
+      { "category": "Healthcare Platform", "industry": "Healthcare", "summary": "A production-ready healthcare platform independently delivered for an international client.", "highlights": ["Built dynamic and configurable admin modules", "Implemented user management and secure JWT authentication", "Delivered the complete production application independently"], "capabilities": ["Admin Dashboard", "Authentication", "User Management", "Configurable Modules"] },
+      { "category": "Tournament Ecosystem", "industry": "Sports", "summary": "A large-scale sports tournament platform covering more than 12 sports categories.", "highlights": ["Built an organiser dashboard for complete tournament management", "Supported tournament creation, ticket pricing and participant tracking", "Implemented result publishing across the tournament lifecycle"], "capabilities": ["Tournament Management", "Organiser Dashboard", "Participant Tracking", "Result Publishing"] },
+      { "category": "Prize-Draw Platform", "industry": "Commerce & Gaming", "summary": "A multi-category prize-draw platform combining commerce, payments, rewards and secure winner selection.", "highlights": ["Built ticket cart, instant wins, gift cards, wallet and gift-credit systems", "Integrated Stripe payments and multi-currency switching", "Implemented compliance questions and secure winner selection from eligible tickets"], "capabilities": ["Stripe Payments", "Wallet System", "Instant Win", "Gift Cards", "Compliance Engine", "Random Draw Logic"] }
+    ]
+  },
+  "experience": {
+    "eyebrow": "Experience", "title": "Places That Shaped Me", "intro": "I don't measure my career by years. I measure it by products built, problems solved, and lessons carried forward.", "chapter": "Chapter {{number}}", "carried": "What I carried forward",
+    "items": [
+      { "role": "Frontend Developer", "duration": "Jun 2024 - Jun 2025", "lesson": "Where I learned that great products begin with great user experiences.", "highlights": ["Built responsive user interfaces using React and Next.js.", "Developed reusable UI components with clean, scalable architecture.", "Collaborated with designers and backend developers to deliver polished, production-ready user experiences."] },
+      { "role": "Software Developer", "duration": "Aug 2025 - Present", "lesson": "Where I grew from building features to building complete products.", "highlights": ["Developed production-ready full-stack applications using Next.js, React, Node.js, Express, MongoDB, and Python.", "Built dynamic admin dashboards, scalable APIs, and role-based access control.", "Implemented server-side rendering, protected routes, and API-driven business features across multiple client projects."] }
+    ]
+  },
+  "research": {
+    "eyebrow": "Research Work", "heading": "Award-winning thinking, beyond the code.", "intro": "Research taught me how to slow down, study a domain deeply, and understand technology as a force that changes real-world systems.",
+    "title": "Real Estate Market in the Digital Age", "subtitle": "A review of technology trends and advancements shaping how real estate transactions become more efficient, transparent, and digitally enabled.", "award": "Best Research Paper", "certificateAlt": "ICRTAC 2023 Best Research Paper certificate awarded to Shivani Jain",
+    "certificateReady": "Certificate image ready to add", "certificatePath": "Save it as public/research/icrtac-2023-certificate.webp", "recognition": "Recognition", "bestPaper": "Best Paper", "publicationLabel": "Publication", "publication": "Published in IEEE Xplore", "documentId": "Document ID", "role": "Lead Researcher", "contributionLabel": "My Contribution",
+    "contribution": "Led the research process from data collection and analysis to drafting the final manuscript, strengthening my understanding of real estate systems and the technologies transforming them.",
+    "highlights": ["Reviewed digital technologies transforming real estate transactions.", "Analyzed case studies showing practical technology implementation.", "Identified future trends and potential areas of market disruption."],
+    "themes": ["Digital Transformation", "PropTech", "Data Analysis", "Technology Trends", "Real Estate"], "viewPaper": "View paper on IEEE Xplore"
+  },
+  "contact": {
+    "eyebrow": "Get In Touch", "title": "Let's build something", "emphasis": "worth remembering.", "description": "If you're building something meaningful and think I can help, I'd love to hear about it. If it feels like the right fit for both of us, I'll be happy to continue the conversation.", "thanks": "Thanks for taking the time to explore my work.", "email": "Email"
+  },
+  "accessibility": { "home": "Go to Shivani Jain hero section", "emailShivani": "Email Shivani Jain" }
+}

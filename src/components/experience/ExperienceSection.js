@@ -1,7 +1,13 @@
 import ExperienceChapter from "@/components/experience/ExperienceChapter";
 import experience from "@/data/experience.json";
+import useLanguage from "@/hooks/useLanguage";
 
 export default function ExperienceSection() {
+  const { t } = useLanguage();
+  const localizedExperience = experience.map((item, index) => ({
+    ...item,
+    ...t("experience.items")[index],
+  }));
   return (
     <section
       id="experience"
@@ -17,22 +23,21 @@ export default function ExperienceSection() {
       <div className="relative z-10 mx-auto max-w-5xl">
         <div className="mx-auto mb-12 max-w-3xl text-center">
           <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
-            Experience
+            {t("experience.eyebrow")}
           </p>
           <h2
             className="mb-5 text-5xl leading-[0.95] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
             style={{ fontFamily: "'Instrument Serif', serif" }}
           >
-            Places That Shaped Me
+            {t("experience.title")}
           </h2>
           <p className="mx-auto max-w-2xl text-sm leading-relaxed text-white/62 md:text-base">
-            I don&apos;t measure my career by years. I measure it by products
-            built, problems solved, and lessons carried forward.
+            {t("experience.intro")}
           </p>
         </div>
 
         <div className="space-y-5 sm:space-y-6">
-          {experience.map((item, index) => (
+          {localizedExperience.map((item, index) => (
             <ExperienceChapter key={item.company} item={item} index={index} />
           ))}
         </div>

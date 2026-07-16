@@ -1,36 +1,13 @@
 import { useEffect, useRef } from "react";
 import { BookOpen, Layers3, Lightbulb, Sparkles } from "lucide-react";
+import useLanguage from "@/hooks/useLanguage";
 
 const philosophyCards = [
-  {
-    title: "Problem First",
-    description:
-      "Every project starts with understanding the problem, not choosing the technology.",
-    icon: Lightbulb,
-  },
-  {
-    title: "Always Learning",
-    description:
-      "Every product teaches me something new, and I carry those lessons into the next one.",
-    icon: BookOpen,
-  },
-  {
-    title: "Build End-to-End",
-    description:
-      "I enjoy taking products from idea to deployment across the entire stack.",
-    icon: Layers3,
-  },
-  {
-    title: "User Experience Matters",
-    description:
-      "Great software isn't only functional. It should feel effortless to use.",
-    icon: Sparkles,
-  },
+  Lightbulb, BookOpen, Layers3, Sparkles,
 ];
 
-const approachSteps = ["Problem", "Design", "Build", "Learn"];
-
 export default function AboutSection() {
+  const { t } = useLanguage();
   const sectionRef = useRef(null);
 
   useEffect(() => {
@@ -72,33 +49,20 @@ export default function AboutSection() {
         <div className="grid gap-10 lg:grid-cols-[1fr_0.72fr] lg:items-center">
           <div>
             <p className="mb-4 text-xs font-semibold uppercase tracking-[0.32em] text-[#ff9fc6]">
-              About
+              {t("about.eyebrow")}
             </p>
             <h2 className="mb-6 max-w-4xl text-5xl leading-[0.95] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl">
-              I don&apos;t just write code. I build{" "}
+              {t("about.title")}{" "}
               <span
                 className="italic text-[#ffd3e4]"
                 style={{ fontFamily: "'Instrument Serif', serif" }}
               >
-                products with purpose.
+                {t("about.emphasis")}
               </span>
             </h2>
 
             <div className="max-w-2xl space-y-4 text-sm leading-relaxed text-white/64 md:text-base">
-              <p>
-                I&apos;m a software engineer who enjoys turning ideas into
-                products that people actually use.
-              </p>
-              <p>
-                I don&apos;t get attached to technologies. I choose the right
-                tools for the problem.
-              </p>
-              <p>
-                Whether it&apos;s a healthcare platform, a finance dashboard, a
-                research project, or an enterprise application, I&apos;m driven
-                by solving meaningful problems, creating intuitive experiences,
-                and continuously learning through every challenge.
-              </p>
+              {t("about.paragraphs").map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             </div>
           </div>
 
@@ -111,14 +75,14 @@ export default function AboutSection() {
                   className="text-2xl italic leading-none text-white"
                   style={{ fontFamily: "'Instrument Serif', serif" }}
                 >
-                  Build
+                  {t("about.build")}
                 </p>
                 <p className="mt-1 text-[10px] uppercase tracking-[0.24em] text-white/40">
-                  loop
+                  {t("about.loop")}
                 </p>
               </div>
 
-              {approachSteps.map((step, index) => (
+              {t("about.steps").map((step, index) => (
                 <div
                   key={step}
                   className={`approach-node approach-node-${index} liquid-glass rounded-full px-3 py-2 text-xs font-medium text-white/72`}
@@ -131,7 +95,9 @@ export default function AboutSection() {
         </div>
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:gap-5">
-          {philosophyCards.map(({ title, description, icon: Icon }, index) => (
+          {t("about.cards").map(({ title, description }, index) => {
+            const Icon = philosophyCards[index];
+            return (
             <article
               key={title}
               className="about-card liquid-glass rounded-[26px] p-5 transition-all duration-300 hover:-translate-y-1 hover:bg-white/[0.025] hover:shadow-[0_0_32px_rgba(255,79,145,0.1)] sm:p-6"
@@ -145,7 +111,8 @@ export default function AboutSection() {
                 {description}
               </p>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

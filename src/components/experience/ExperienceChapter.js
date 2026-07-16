@@ -1,7 +1,9 @@
 import { useEffect, useRef } from "react";
 import { CheckCircle2, Sparkles } from "lucide-react";
+import useLanguage from "@/hooks/useLanguage";
 
 export default function ExperienceChapter({ item, index }) {
+  const { t } = useLanguage();
   const cardRef = useRef(null);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ export default function ExperienceChapter({ item, index }) {
       <div className="grid gap-7 lg:grid-cols-[0.72fr_1fr] lg:items-start">
         <div>
           <div className="mb-5 flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.24em] text-white/42">
-            <span className="text-[#ff9fc6]">Chapter {item.chapter}</span>
+            <span className="text-[#ff9fc6]">{t("experience.chapter", { number: item.chapter })}</span>
             <span className="h-px w-10 bg-gradient-to-r from-[#ff4f91] to-transparent" />
           </div>
 
@@ -65,7 +67,7 @@ export default function ExperienceChapter({ item, index }) {
         <div>
           <div className="mb-5 flex items-center gap-2 text-sm font-medium text-white/72">
             <Sparkles size={16} className="text-[#ff9fc6]" aria-hidden="true" />
-            <span>What I carried forward</span>
+            <span>{t("experience.carried")}</span>
           </div>
 
           <ul className="mb-6 space-y-3">

@@ -6,6 +6,7 @@ import {
   ExternalLink,
   Layers3,
 } from "lucide-react";
+import useLanguage from "@/hooks/useLanguage";
 
 function getDomain(url) {
   try {
@@ -16,6 +17,7 @@ function getDomain(url) {
 }
 
 function ProjectImage({ project }) {
+  const { t } = useLanguage();
   const [hasImage, setHasImage] = useState(Boolean(project.image));
 
   return (
@@ -23,7 +25,7 @@ function ProjectImage({ project }) {
       href={project.link}
       target="_blank"
       rel="noreferrer"
-      aria-label={`Open ${project.title} live product`}
+      aria-label={t("work.openProduct", { title: project.title })}
       className="group block focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff9fc6]"
     >
       <div className="liquid-glass overflow-hidden rounded-[22px] p-2 shadow-[0_26px_80px_rgba(0,0,0,0.34)]">
@@ -43,7 +45,7 @@ function ProjectImage({ project }) {
           {hasImage ? (
             <Image
               src={project.image}
-              alt={`${project.title} project preview`}
+              alt={t("work.imageAlt", { title: project.title })}
               fill
               sizes="(min-width: 1024px) 50vw, 100vw"
               onError={() => setHasImage(false)}
@@ -59,7 +61,7 @@ function ProjectImage({ project }) {
                 {project.title}
               </p>
               <span className="text-xs uppercase tracking-[0.28em] text-white/40">
-                Preview coming soon
+                {t("work.previewSoon")}
               </span>
             </div>
           )}
@@ -71,6 +73,7 @@ function ProjectImage({ project }) {
 }
 
 export default function ProjectShowcase({ project, reverse = false }) {
+  const { t } = useLanguage();
   const rowRef = useRef(null);
 
   useEffect(() => {
@@ -166,7 +169,7 @@ export default function ProjectShowcase({ project, reverse = false }) {
           rel="noreferrer"
           className="pink-glow inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 text-sm font-semibold text-black transition-transform hover:scale-[1.03] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff9fc6]"
         >
-          Visit live product
+          {t("work.visit")}
           <ArrowUpRight size={16} aria-hidden="true" />
         </a>
       </div>

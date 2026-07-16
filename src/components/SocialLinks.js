@@ -1,4 +1,5 @@
 import { Github, Linkedin, Mail } from "lucide-react";
+import useLanguage from "@/hooks/useLanguage";
 
 const links = [
   {
@@ -12,23 +13,25 @@ const links = [
     icon: Linkedin,
   },
   {
-    label: "Email Shivani Jain",
+    labelKey: "accessibility.emailShivani",
     href: "mailto:your-email@example.com",
     icon: Mail,
   },
 ];
 
 export default function SocialLinks() {
+  const { t } = useLanguage();
   return (
     <div className="flex items-center gap-3">
-      {links.map(({ label, href, icon: Icon }) => {
+      {links.map(({ label, labelKey, href, icon: Icon }) => {
         const isEmail = href.startsWith("mailto:");
+        const ariaLabel = labelKey ? t(labelKey) : label;
 
         return (
           <a
-            key={label}
+            key={label || labelKey}
             href={href}
-            aria-label={label}
+            aria-label={ariaLabel}
             target={isEmail ? undefined : "_blank"}
             rel={isEmail ? undefined : "noreferrer"}
             className="liquid-glass rounded-full p-3 text-white/70 transition-all duration-300 hover:-translate-y-1 hover:bg-white/5 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff9fc6] md:p-4"

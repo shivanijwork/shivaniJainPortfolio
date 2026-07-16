@@ -3,13 +3,13 @@ import { ArrowDown, BriefcaseBusiness } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import LiquidButton from "@/components/LiquidButton";
 import SocialLinks from "@/components/SocialLinks";
+import useLanguage from "@/hooks/useLanguage";
 
 const videoSource =
   "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260328_115001_bcdaa3b4-03de-47e7-ad63-ae3e392c32d4.mp4";
 
-const expertise = ["Full Stack Products", "Machine Learning", "Research"];
-
 export default function PortfolioHero() {
+  const { t } = useLanguage();
   const videoRef = useRef(null);
   const animationFrameRef = useRef(null);
   const fadingOutRef = useRef(false);
@@ -119,7 +119,7 @@ export default function PortfolioHero() {
         playsInline
         preload="metadata"
       >
-        Your browser does not support the background video.
+        {t("hero.videoFallback")}
       </video>
       <div className="absolute inset-0 bg-black/55" />
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_78%,rgba(255,79,145,0.16),transparent_34%),radial-gradient(circle_at_78%_24%,rgba(255,159,198,0.08),transparent_28%)]" />
@@ -129,24 +129,23 @@ export default function PortfolioHero() {
       <div className="relative z-10 flex flex-1 -translate-y-[8%] flex-col items-center mt-10 justify-center px-5 py-12 text-center md:-translate-y-[15%] md:px-6">
         <div className="liquid-glass mb-6 flex items-center gap-2 rounded-full px-4 py-2 text-xs text-white/80 md:text-sm">
           <span className="status-dot size-2 rounded-full bg-[#ff4f91]" />
-          <span>Open to meaningful software opportunities</span>
+          <span>{t("hero.status")}</span>
         </div>
 
         <h1
           className="mx-auto mb-7 max-w-5xl text-5xl leading-[0.95] tracking-tight text-white sm:text-3xl md:text-4xl lg:text-5xl"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
-          Hi, I&apos;m Shivani.
+          {t("hero.greeting")}
           <br />
-          Tech stacks come and go.
+          {t("hero.line2")}
           <br />
-          I build solutions that solve{" "}
-          <span className="italic text-[#ffd3e4]">real-world problems.</span>
+          {t("hero.line3")}{" "}
+          <span className="italic text-[#ffd3e4]">{t("hero.emphasis")}</span>
         </h1>
 
         <p className="mb-8 max-w-2xl px-2 text-sm leading-relaxed text-white/65 md:px-4 md:text-base">
-          I build production-ready digital products across healthcare, sports,
-          finance, mobile applications, machine learning, and research.
+          {t("hero.description")}
         </p>
 
         <div className="liquid-glass pink-glow flex w-full max-w-xl items-center justify-between gap-3 rounded-full py-2 pl-5 pr-2 md:pl-6">
@@ -157,13 +156,13 @@ export default function PortfolioHero() {
               aria-hidden="true"
             />
             <span className="truncate text-sm text-white/75">
-              Explore the products and problems I&apos;ve worked on
+              {t("hero.explore")}
             </span>
           </div>
           <button
             type="button"
             onClick={scrollToWork}
-            aria-label="Scroll to work section"
+            aria-label={t("hero.scrollLabel")}
             className="grid size-11 shrink-0 place-items-center rounded-full bg-white text-black transition-transform hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff9fc6]"
           >
             <ArrowDown size={20} aria-hidden="true" />
@@ -171,7 +170,7 @@ export default function PortfolioHero() {
         </div>
 
         <div className="mt-5 flex flex-wrap justify-center gap-2">
-          {expertise.map((item) => (
+          {t("hero.expertise").map((item) => (
             <span
               key={item}
               className="liquid-glass rounded-full px-4 py-2 text-xs text-white/65 transition-colors hover:bg-white/5 hover:text-[#ffd3e4]"
@@ -185,14 +184,14 @@ export default function PortfolioHero() {
           href="#about"
           className="mt-[18px] px-7 py-3 text-sm text-white md:px-8"
         >
-          View my approach
+          {t("hero.approach")}
         </LiquidButton>
       </div>
 
       <footer className="relative z-10 flex flex-col items-center justify-between gap-5 px-6 pb-8 md:flex-row md:px-10 md:pb-10">
         <p className="hidden text-xs text-white/45 sm:block md:text-sm">
           {/* Based in Jaipur, India ·  */}
-          Building for the web and beyond
+          {t("hero.footer")}
         </p>
         <SocialLinks />
       </footer>
